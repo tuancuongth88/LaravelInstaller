@@ -70,8 +70,8 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## Contributing
 
-* If you have any suggestions please let me know : https://github.com/Cuongnt/LaravelInstaller/pulls.
-* Please help us provide more languages for this awesome package please send a pull request https://github.com/Cuongnt/LaravelInstaller/pulls.
+* If you have any suggestions please let me know : https://github.com/tuancuongth88/LaravelInstaller/pulls.
+* Please help us provide more languages for this awesome package please send a pull request https://github.com/tuancuongth88/LaravelInstaller/pulls.
 
 
 ## Screenshots
