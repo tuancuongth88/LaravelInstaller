@@ -1,11 +1,11 @@
 <?php
 
-namespace Cuongnt\LaravelInstaller\Providers;
+namespace cuongnt\LaravelInstaller\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use Cuongnt\LaravelInstaller\Middleware\canInstall;
-use Cuongnt\LaravelInstaller\Middleware\canUpdate;
+use cuongnt\LaravelInstaller\Middleware\canInstall;
+use cuongnt\LaravelInstaller\Middleware\canUpdate;
 
 class LaravelInstallerServiceProvider extends ServiceProvider
 {

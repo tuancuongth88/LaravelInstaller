@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuongnt\LaravelInstaller\Middleware;
+namespace cuongnt\LaravelInstaller\Middleware;
 
 use Closure;
 use Redirect;

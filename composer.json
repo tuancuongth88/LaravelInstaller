@@ -1,5 +1,5 @@
 {
-    "name": "Cuongnt/laravel-installer",
+    "name": "cuongnt/laravel-installer",
     "description": "Laravel web installer",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Cuongnt\\LaravelInstaller\\": "src/"
+            "cuongnt\\LaravelInstaller\\": "src/"
         },
         "files": [
             "src/Helpers/functions.php"
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Cuongnt\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
+                "cuongnt\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
             ]
         }
     },

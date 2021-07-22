@@ -21,7 +21,7 @@ The current features are :
 1. From your projects root folder in terminal run:
 
 ```bash
-    composer require Cuongnt/laravel-installer
+    composer require cuongnt/laravel-installer
 ```
 
 2. Register the package
@@ -34,7 +34,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ```php
 	'providers' => [
-	    Cuongnt\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+	    cuongnt\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 	];
 ```
 

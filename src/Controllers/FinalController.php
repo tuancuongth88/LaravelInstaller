@@ -1,21 +1,21 @@
 <?php
 
-namespace Cuongnt\LaravelInstaller\Controllers;
+namespace cuongnt\LaravelInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
-use Cuongnt\LaravelInstaller\Events\LaravelInstallerFinished;
-use Cuongnt\LaravelInstaller\Helpers\EnvironmentManager;
-use Cuongnt\LaravelInstaller\Helpers\FinalInstallManager;
-use Cuongnt\LaravelInstaller\Helpers\InstalledFileManager;
+use cuongnt\LaravelInstaller\Events\LaravelInstallerFinished;
+use cuongnt\LaravelInstaller\Helpers\EnvironmentManager;
+use cuongnt\LaravelInstaller\Helpers\FinalInstallManager;
+use cuongnt\LaravelInstaller\Helpers\InstalledFileManager;
 
 class FinalController extends Controller
 {
     /**
      * Update installed file and display finished view.
      *
-     * @param \Cuongnt\LaravelInstaller\Helpers\InstalledFileManager $fileManager
-     * @param \Cuongnt\LaravelInstaller\Helpers\FinalInstallManager $finalInstall
-     * @param \Cuongnt\LaravelInstaller\Helpers\EnvironmentManager $environment
+     * @param \cuongnt\LaravelInstaller\Helpers\InstalledFileManager $fileManager
+     * @param \cuongnt\LaravelInstaller\Helpers\FinalInstallManager $finalInstall
+     * @param \cuongnt\LaravelInstaller\Helpers\EnvironmentManager $environment
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function finish(InstalledFileManager $fileManager, FinalInstallManager $finalInstall, EnvironmentManager $environment)
