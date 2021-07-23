@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelSetupServiceProvider"
+                "src/Providers/LaravelSetupServiceProvider"
             ]
         }
     },
