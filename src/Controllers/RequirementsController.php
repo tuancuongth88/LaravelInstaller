@@ -1,9 +1,9 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Controllers;
+namespace cuongnt\LaravelSetup\Controllers;
 
 use Illuminate\Routing\Controller;
-use cuongnt\LaravelInstaller\Helpers\RequirementsChecker;
+use cuongnt\LaravelSetup\Helpers\RequirementsChecker;
 
 class RequirementsController extends Controller
 {
@@ -34,6 +34,6 @@ class RequirementsController extends Controller
             config('installer.requirements')
         );
 
-        return view('vendor.installer.requirements', compact('requirements', 'phpSupportInfo'));
+        return view('vendor.setup.requirements', compact('requirements', 'phpSupportInfo'));
     }
 }

@@ -1,14 +1,14 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Controllers;
+namespace cuongnt\LaravelSetup\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
-use cuongnt\LaravelInstaller\Events\EnvironmentSaved;
-use cuongnt\LaravelInstaller\Helpers\EnvironmentManager;
+use cuongnt\LaravelSetup\Events\EnvironmentSaved;
+use cuongnt\LaravelSetup\Helpers\EnvironmentManager;
 use Validator;
 
 class EnvironmentController extends Controller
@@ -33,7 +33,7 @@ class EnvironmentController extends Controller
      */
     public function environmentMenu()
     {
-        return view('vendor.installer.environment');
+        return view('vendor.setup.environment');
     }
 
     /**
@@ -45,7 +45,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installer.environment-wizard', compact('envConfig'));
+        return view('vendor.setup.environment-wizard', compact('envConfig'));
     }
 
     /**
@@ -57,7 +57,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installer.environment-classic', compact('envConfig'));
+        return view('vendor.setup.environment-classic', compact('envConfig'));
     }
 
     /**
@@ -73,7 +73,7 @@ class EnvironmentController extends Controller
 
         event(new EnvironmentSaved($input));
 
-        return $redirect->route('LaravelInstaller::environmentClassic')
+        return $redirect->route('LaravelSetup::environmentClassic')
                         ->with(['message' => $message]);
     }
 
@@ -94,11 +94,11 @@ class EnvironmentController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return $redirect->route('LaravelInstaller::environmentWizard')->withInput()->withErrors($validator->errors());
+            return $redirect->route('LaravelSetup::environmentWizard')->withInput()->withErrors($validator->errors());
         }
 
         if (! $this->checkDatabaseConnection($request)) {
-            return $redirect->route('LaravelInstaller::environmentWizard')->withInput()->withErrors([
+            return $redirect->route('LaravelSetup::environmentWizard')->withInput()->withErrors([
                 'database_connection' => trans('installer_messages.environment.wizard.form.db_connection_failed'),
             ]);
         }
@@ -107,12 +107,12 @@ class EnvironmentController extends Controller
 
         event(new EnvironmentSaved($request));
 
-        return $redirect->route('LaravelInstaller::database')
+        return $redirect->route('LaravelSetup::database')
                         ->with(['results' => $results]);
     }
 
     /**
-     * TODO: We can remove this code if PR will be merged: https://github.com/cuongnt/LaravelInstaller/pull/162
+     * TODO: We can remove this code if PR will be merged: https://github.com/cuongnt/LaravelSetup/pull/162
      * Validate database connection with user credentials (Form Wizard).
      *
      * @param Request $request

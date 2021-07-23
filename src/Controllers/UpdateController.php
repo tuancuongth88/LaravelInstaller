@@ -1,14 +1,14 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Controllers;
+namespace cuongnt\LaravelSetup\Controllers;
 
 use Illuminate\Routing\Controller;
-use cuongnt\LaravelInstaller\Helpers\DatabaseManager;
-use cuongnt\LaravelInstaller\Helpers\InstalledFileManager;
+use cuongnt\LaravelSetup\Helpers\DatabaseManager;
+use cuongnt\LaravelSetup\Helpers\SetupFileManager;
 
 class UpdateController extends Controller
 {
-    use \cuongnt\LaravelInstaller\Helpers\MigrationsHelper;
+    use \cuongnt\LaravelSetup\Helpers\MigrationsHelper;
 
     /**
      * Display the updater welcome page.
@@ -17,7 +17,7 @@ class UpdateController extends Controller
      */
     public function welcome()
     {
-        return view('vendor.installer.update.welcome');
+        return view('vendor.setup.update.welcome');
     }
 
     /**
@@ -30,7 +30,7 @@ class UpdateController extends Controller
         $migrations = $this->getMigrations();
         $dbMigrations = $this->getExecutedMigrations();
 
-        return view('vendor.installer.update.overview', ['numberOfUpdatesPending' => count($migrations) - count($dbMigrations)]);
+        return view('vendor.setup.update.overview', ['numberOfUpdatesPending' => count($migrations) - count($dbMigrations)]);
     }
 
     /**
@@ -50,13 +50,13 @@ class UpdateController extends Controller
     /**
      * Update installed file and display finished view.
      *
-     * @param InstalledFileManager $fileManager
+     * @param SetupFileManager $fileManager
      * @return \Illuminate\View\View
      */
-    public function finish(InstalledFileManager $fileManager)
+    public function finish(SetupFileManager $fileManager)
     {
         $fileManager->update();
 
-        return view('vendor.installer.update.finished');
+        return view('vendor.setup.update.finished');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+
 if (! function_exists('isActive')) {
     /**
      * Set the active class to the current opened menu.

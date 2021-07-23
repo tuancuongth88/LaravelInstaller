@@ -1,9 +1,9 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Controllers;
+namespace cuongnt\LaravelSetup\Controllers;
 
 use Illuminate\Routing\Controller;
-use cuongnt\LaravelInstaller\Helpers\PermissionsChecker;
+use cuongnt\LaravelSetup\Helpers\PermissionsChecker;
 
 class PermissionsController extends Controller
 {
@@ -31,6 +31,6 @@ class PermissionsController extends Controller
             config('installer.permissions')
         );
 
-        return view('vendor.installer.permissions', compact('permissions'));
+        return view('vendor.setup.permissions', compact('permissions'));
     }
 }

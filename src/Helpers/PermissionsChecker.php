@@ -1,6 +1,6 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Helpers;
+namespace cuongnt\LaravelSetup\Helpers;
 
 class PermissionsChecker
 {
@@ -68,7 +68,7 @@ class PermissionsChecker
     }
 
     /**
-     * Add the file and set the errors.
+     * Add the file and set the errors.'ovc.\
      *
      * @param $folder
      * @param $permission

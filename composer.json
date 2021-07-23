@@ -1,7 +1,7 @@
 {
-    "name": "cuongnt/laravel-installer",
-    "description": "Laravel web installer",
-    "license": "MIT",
+    "name": "cuongnt/laravel-setup",
+    "description": "Laravel web setup",
+    "license": "1.0",
     "authors": [
         {
             "name": "Ngo Tuan Cuong",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "cuongnt\\LaravelInstaller\\": "src/"
+            "cuongnt\\LaravelSetup\\": "src/"
         },
         "files": [
             "src/Helpers/functions.php"
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "cuongnt\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
+                "LaravelSetupServiceProvider"
             ]
         }
     },

@@ -21,7 +21,7 @@ The current features are :
 1. From your projects root folder in terminal run:
 
 ```bash
-    composer require cuongnt/laravel-installer
+    composer require cuongnt/laravel-setup
 ```
 
 2. Register the package
@@ -34,14 +34,14 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ```php
 	'providers' => [
-	    cuongnt\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+	    cuongnt\LaravelSetup\Providers\LaravelSetupServiceProvider::class,
 	];
 ```
 
 3. Publish the packages views, config file, assets, and language files by running the following from your projects root folder:
 
 ```bash
-    php artisan vendor:publish --tag=laravelinstaller
+    php artisan vendor:publish --tag=laravel_setup
 ```
 
 ## Routes
@@ -65,7 +65,7 @@ Register the package with laravel in `config/app.php` under `providers` with the
 |:------------|:------------|
 |`config/installer.php`|In here you can set the requirements along with the folders permissions for your application to run, by default the array cotaines the default requirements for a basic Laravel app.|
 |`public/installer/assets`|This folder contains a css folder and inside of it you will find a `main.css` file, this file is responsible for the styling of your installer, you can overide the default styling and add your own.|
-|`resources/views/vendor/installer`|This folder contains the HTML code for your installer, it is 100% customizable, give it a look and see how nice/clean it is.|
+|`resources/views/vendor/setup`|This folder contains the HTML code for your installer, it is 100% customizable, give it a look and see how nice/clean it is.|
 |`resources/lang/en/installer_messages.php`|This file holds all the messages/text, currently only English is available, if your application is in another language, you can copy/past it in your language folder and modify it the way you want.|
 
 ## Contributing
@@ -77,15 +77,15 @@ Register the package with laravel in `config/app.php` under `providers` with the
 ## Screenshots
 
 ###### Installer
-![Laravel web installer | Step 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/1-welcome.jpg)
-![Laravel web installer | Step 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/2-requirements.jpg)
-![Laravel web installer | Step 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/3-permissions.jpg)
-![Laravel web installer | Step 4 Menu](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4-environment.jpg)
-![Laravel web installer | Step 4 Classic](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4a-environment-classic.jpg)
-![Laravel web installer | Step 4 Wizard 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-1.jpg)
-![Laravel web installer | Step 4 Wizard 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-2.jpg)
-![Laravel web installer | Step 4 Wizard 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-3.jpg)
-![Laravel web installer | Step 5](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/5-final.jpg)
+![Laravel web setup | Step 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/1-welcome.jpg)
+![Laravel web setup | Step 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/2-requirements.jpg)
+![Laravel web setup | Step 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/3-permissions.jpg)
+![Laravel web setup | Step 4 Menu](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4-environment.jpg)
+![Laravel web setup | Step 4 Classic](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4a-environment-classic.jpg)
+![Laravel web setup | Step 4 Wizard 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-1.jpg)
+![Laravel web setup | Step 4 Wizard 2](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-2.jpg)
+![Laravel web setup | Step 4 Wizard 3](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/4b-environment-wizard-3.jpg)
+![Laravel web setup | Step 5](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/install/5-final.jpg)
 
 ###### Updater
 ![Laravel web updater | Step 1](https://s3-us-west-2.amazonaws.com/github-project-images/laravel-installer/update/1-welcome.jpg)
@@ -94,4 +94,9 @@ Register the package with laravel in `config/app.php` under `providers` with the
 
 ## License
 
-Laravel Web Installer is licensed under the MIT license. Enjoy!
+Free all
+
+## Donate
+
+Your support amount is the motivation for us to upgrade and develop the application
+paypal: https://www.paypal.com/paypalme/ngotuancuong?locale.x=en_US

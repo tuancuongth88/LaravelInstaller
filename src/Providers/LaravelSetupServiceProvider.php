@@ -1,13 +1,13 @@
 <?php
 
-namespace cuongnt\LaravelInstaller\Providers;
+namespace cuongnt\LaravelSetup\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
-use cuongnt\LaravelInstaller\Middleware\canInstall;
-use cuongnt\LaravelInstaller\Middleware\canUpdate;
+use cuongnt\LaravelSetup\Middleware\canInstall;
+use cuongnt\LaravelSetup\Middleware\canUpdate;
 
-class LaravelInstallerServiceProvider extends ServiceProvider
+class LaravelSetupServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -39,7 +39,7 @@ class LaravelInstallerServiceProvider extends ServiceProvider
     }
 
     /**
-     * Publish config file for the installer.
+     * Publish config file for the Setup.
      *
      * @return void
      */
@@ -47,18 +47,18 @@ class LaravelInstallerServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../Config/installer.php' => base_path('config/installer.php'),
-        ], 'laravelinstaller');
+        ], 'laravel_setup');
 
         $this->publishes([
             __DIR__.'/../assets' => public_path('installer'),
-        ], 'laravelinstaller');
+        ], 'laravel_setup');
 
         $this->publishes([
-            __DIR__.'/../Views' => base_path('resources/views/vendor/installer'),
-        ], 'laravelinstaller');
+            __DIR__.'/../Views' => base_path('resources/views/vendor/setup'),
+        ], 'laravel_setup');
 
         $this->publishes([
             __DIR__.'/../Lang' => base_path('resources/lang'),
-        ], 'laravelinstaller');
+        ], 'laravel_setup');
     }
 }
