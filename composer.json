@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "src/Providers/LaravelSetupServiceProvider"
+                "cuongnt\\LaravelSetup\\Providers\\LaravelSetupServiceProvider"
             ]
         }
     },
