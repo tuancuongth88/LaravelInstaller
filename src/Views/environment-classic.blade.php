@@ -10,7 +10,7 @@
 
 @section('container')
 
-    <form method="post" action="{{ route('LaravelInstaller::environmentSaveClassic') }}">
+    <form method="post" action="{{ route('LaravelSetup::environmentSaveClassic') }}">
         {!! csrf_field() !!}
         <textarea class="textarea" name="envConfig">{{ $envConfig }}</textarea>
         <div class="buttons buttons--right">
@@ -23,11 +23,11 @@
 
     @if( ! isset($environment['errors']))
         <div class="buttons-container">
-            <a class="button float-left" href="{{ route('LaravelInstaller::environmentWizard') }}">
+            <a class="button float-left" href="{{ route('LaravelSetup::environmentWizard') }}">
                 <i class="fa fa-sliders fa-fw" aria-hidden="true"></i>
                 {!! trans('installer_messages.environment.classic.back') !!}
             </a>
-            <a class="button float-right" href="{{ route('LaravelInstaller::database') }}">
+            <a class="button float-right" href="{{ route('LaravelSetup::database') }}">
                 <i class="fa fa-check fa-fw" aria-hidden="true"></i>
                 {!! trans('installer_messages.environment.classic.install') !!}
                 <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i>

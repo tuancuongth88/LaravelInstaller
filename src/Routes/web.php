@@ -3,7 +3,7 @@
 
 
 
-Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' => 'cuongnt\LaravelSetup\Controllers', 'middleware' => ['web', 'install']], function () {
+Route::group(['prefix' => 'install', 'as' => 'LaravelSetup::', 'namespace' => 'cuongnt\LaravelSetup\Controllers', 'middleware' => ['install']], function () {
     Route::get('/', [
         'as' => 'welcome',
         'uses' => 'WelcomeController@welcome',
