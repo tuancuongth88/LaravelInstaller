@@ -22,3 +22,21 @@ if (! function_exists('isActive')) {
         }
     }
 }
+if (!function_exists('get_package_version')) {
+    /**
+     * @param string $packageName
+     * @return string
+     */
+    function get_package_version($packageName)
+    {
+        $file = base_path().'/composer.lock';
+        $packages = json_decode(file_get_contents($file), true)['packages'];
+        foreach ($packages as $package) {
+            if ($package['name'] == $packageName) {
+                return $package['version'];
+            }
+        }
+        return null;
+    }
+}
+

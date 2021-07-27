@@ -4,6 +4,7 @@ namespace cuongnt\LaravelSetup\Helpers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 
 class EnvironmentManager
@@ -42,6 +43,15 @@ class EnvironmentManager
             }
         }
 
+        if(!env('APP_KEY')){
+            Artisan::call('key:generate');
+        }
+        if(!env('JWT_SECRET')){
+            //check pakace install
+            if(get_package_version('lcobucci/jwt')){
+                Artisan::call('jwt:secret');
+            }
+        }
         return file_get_contents($this->envPath);
     }
 
